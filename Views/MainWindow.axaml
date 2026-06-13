@@ -3,18 +3,234 @@
         xmlns:vm="using:ScreenBreak.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d"
+        d:DesignWidth="800"
+        d:DesignHeight="450"
         x:Class="ScreenBreak.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="Screen Break">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
+        <vm:MainWindowViewModel />
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Grid RowDefinitions="60,*">
+
+        <!-- Header -->
+        <Border Grid.Row="0"
+                Background="LimeGreen"
+                CornerRadius="3">
+
+            <Grid ColumnDefinitions="*,Auto">
+
+                <TextBlock Text="eYECARE"
+                           FontSize="24"
+                           FontWeight="SemiBold"
+                           Margin="40,0"
+                           VerticalAlignment="Center"
+                           FontFamily="Consolas"
+                           Foreground="White"
+                           />
+
+            </Grid>
+
+        </Border>
+
+        <!-- Body -->
+        <Grid Grid.Row="1"
+              ColumnDefinitions="220,*">
+
+            <!-- Sidebar -->
+            <Border Grid.Column="0"
+                    Background="GhostWhite"
+                    Margin="5"
+                    CornerRadius="5">
+
+                <StackPanel Margin="15">
+
+                    <Border Background="#E8F5E9"
+                            CornerRadius="5"
+                            Padding="10"
+                            Margin="0,5">
+                        <TextBlock Text="Dashboard" />
+                    </Border>
+
+                    <Border Background="#E8F5E9"
+                            CornerRadius="5"
+                            Padding="10"
+                            Margin="0,5">
+                        <TextBlock Text="Timer" />
+                    </Border>
+
+                    <Border Background="#E8F5E9"
+                            CornerRadius="5"
+                            Padding="10"
+                            Margin="0,5">
+                        <TextBlock Text="Break History" />
+                    </Border>
+
+                    <Border Background="#E8F5E9"
+                            CornerRadius="5"
+                            Padding="10"
+                            Margin="0,5">
+                        <TextBlock Text="Eye Exercises" />
+                    </Border>
+
+                    <Border Background="#E8F5E9"
+                            CornerRadius="5"
+                            Padding="10"
+                            Margin="0,5">
+                        <TextBlock Text="Settings" />
+                    </Border>
+
+                </StackPanel>
+
+            </Border>
+
+            <!-- Main Content -->
+            <Border Grid.Column="1"
+                    Background="WhiteSmoke"
+                    Margin="5">
+
+                <StackPanel Margin="20">
+
+                    <!-- Greeting -->
+                    <TextBlock Text="Hello!"
+                               FontSize="28"
+                               FontWeight="Bold" />
+
+                    <TextBlock Text="Take breaks. Protect your eyes."
+                               Margin="0,10,0,20" />
+
+                    <!-- Timer Card -->
+<!-- Timer Card -->
+<Border Height="350"
+        Background="White"
+        CornerRadius="15"
+        Padding="20">
+
+    <Grid ColumnDefinitions="*,*">
+
+        <!-- Left Side -->
+        <Border Grid.Column="0"
+                Width="250"
+                Height="250"
+                CornerRadius="125"
+                BorderBrush="LimeGreen"
+                BorderThickness="12"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+
+            <StackPanel VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+
+                <TextBlock Text="Work Time"
+                           FontSize="18"
+                           HorizontalAlignment="Center" FontFamily="Consolas"/>
+
+                <TextBlock Text="20:00"
+                           FontSize="54"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           FontFamily="Consolas"/>
+
+                <Border Background="#E8F5E9"
+                        CornerRadius="10"
+                        Padding="8"
+                        Margin="0,10,0,0">
+
+                    <TextBlock Text="20 min"
+                               HorizontalAlignment="Center"/>
+
+                </Border>
+
+            </StackPanel>
+
+        </Border>
+
+        <!-- Right Side -->
+        <StackPanel Grid.Column="1"
+                    Margin="20">
+
+            <TextBlock Text="Current Session"
+                       FontSize="28" FontFamily="Consolas" FontWeight="Bold"/>
+
+            <TextBlock Text="Work Time"
+                       FontSize="32"
+                       FontWeight="SemiBold"
+                       Foreground="Green"
+                       Margin="0,10,0,10" FontFamily="Consolas"/>
+
+            <TextBlock Text="Focus on your work. You're doing great!"
+                       TextWrapping="Wrap"
+                       Margin="0,0,0,20" FontFamily="Consolas"/>
+
+            <Separator Margin="0,10"/>
+
+            <TextBlock Text="Next Break"
+                       FontSize="18"
+                       FontWeight="SemiBold" FontFamily="Consolas"/>
+
+            <TextBlock Text="20 seconds"
+                       Margin="0,5" FontFamily="Consolas"/>
+
+            <TextBlock Text="Rest your eyes"
+                       Foreground="DodgerBlue" FontFamily="Consolas"/>
+
+            <StackPanel Orientation="Horizontal"
+                        Spacing="15"
+                        Margin="0,30,0,0">
+
+                <Button Content="Pause"
+                        Width="120"
+                        Height="40"/>
+
+                <Button Content="Skip"
+                        Width="120"
+                        Height="40"/>
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+
+</Border>                    <!-- Statistics Section -->
+                    <Grid ColumnDefinitions="*,*"
+                          Margin="0,20,0,0">
+
+                        <Border Grid.Column="0"
+                                Height="200"
+                                Background="White"
+                                CornerRadius="15"
+                                Margin="0,0,10,0">
+
+                            <TextBlock Text="Break Statistics"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" FontFamily="Consolas"/>
+
+                        </Border>
+
+                        <Border Grid.Column="1"
+                                Height="200"
+                                Background="White"
+                                CornerRadius="15">
+
+                            <TextBlock Text="Progress"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" FontFamily="Consolas"/>
+
+                        </Border>
+
+                    </Grid>
+
+                </StackPanel>
+
+            </Border>
+
+        </Grid>
+
+    </Grid>
 
 </Window>
