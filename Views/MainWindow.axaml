@@ -19,84 +19,46 @@
     <Grid RowDefinitions="60,*">
 
         <!-- Header -->
-        <Border Grid.Row="0"
-                Background="LimeGreen"
-                CornerRadius="3">
-
+        <Border Grid.Row="0" Background="LimeGreen" CornerRadius="3">
             <Grid ColumnDefinitions="*,Auto">
-
-                <TextBlock Text="eYECARE"
-                           FontSize="24"
-                           FontWeight="SemiBold"
-                           Margin="40,0"
-                           VerticalAlignment="Center"
-                           FontFamily="Poppins"
-                           Foreground="White"
-                           />
-
+                <TextBlock Text="eYECARE" FontSize="24" FontWeight="SemiBold" Margin="40,0" VerticalAlignment="Center" FontFamily="Poppins" Foreground="White" />
             </Grid>
-
         </Border>
 
         <!-- Body -->
-        <Grid Grid.Row="1"
-              ColumnDefinitions="220,*">
+        <Grid Grid.Row="1" ColumnDefinitions="220,*">
 
             <!-- Sidebar -->
-            <Border Grid.Column="0"
-                    Background="GhostWhite"
-                    Margin="5"
-                    CornerRadius="5">
-
+            <Border Grid.Column="0" Background="GhostWhite" Margin="5" CornerRadius="5">
                 <StackPanel Margin="15">
-
-                    <Border Background="#E8F5E9"
-                            CornerRadius="5"
-                            Padding="10"
-                            Margin="0,5">
+                    <Border Background="#E8F5E9" CornerRadius="5" Padding="10" Margin="0,5">
                         <TextBlock Text="Dashboard" FontFamily="Poppins"/>
                     </Border>
 
-                    <Border Background="#E8F5E9"
-                            CornerRadius="5"
-                            Padding="10"
-                            Margin="0,5">
+                    <Border Background="#E8F5E9" CornerRadius="5" Padding="10"  Margin="0,5">
                         <TextBlock Text="Timer"  FontFamily="Poppins"/>
                     </Border>
 
-                    <Border Background="#E8F5E9"
-                            CornerRadius="5"
-                            Padding="10"
-                            Margin="0,5">
+                    <Border Background="#E8F5E9"  CornerRadius="5"  Padding="10" Margin="0,5">
                         <TextBlock Text="Break History"  FontFamily="Poppins"/>
                     </Border>
 
-                    <Border Background="#E8F5E9"
-                            CornerRadius="5"
-                            Padding="10"
-                            Margin="0,5">
+                    <Border Background="#E8F5E9" CornerRadius="5" Padding="10" Margin="0,5">
                         <TextBlock Text="Eye Exercises"  FontFamily="Poppins"/>
                     </Border>
 
-                    <Border Background="#E8F5E9"
-                            CornerRadius="5"
-                            Padding="10"
-                            Margin="0,5">
+                    <Border Background="#E8F5E9" CornerRadius="5" Padding="10" Margin="0,5">
                         <TextBlock Text="Settings"  FontFamily="Poppins"/>
                     </Border>
-
                 </StackPanel>
 
             </Border>
 
             <!-- Main Content -->
-            <Border Grid.Column="1"
-                    Background="WhiteSmoke"
-                    Margin="5">
-                <views:DashboardView/>
+            <Border Grid.Column="1" Background="WhiteSmoke" Margin="5">
+                <ContentControl Content="{Binding CurrentView}" />
             </Border>
         </Grid>
 
     </Grid>
-
 </Window>
