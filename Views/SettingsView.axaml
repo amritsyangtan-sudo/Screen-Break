@@ -26,11 +26,6 @@
                         <TextBlock Text="Break Duration" VerticalAlignment="Center"/>
                         <TextBox Grid.Column="1" Text="20" />
                     </Grid>
-
-                    <Grid ColumnDefinitions="200,*">
-                        <TextBlock Text="Long Break Duration"  VerticalAlignment="Center"/>
-                        <TextBox Grid.Column="1" Text="5"/>
-                    </Grid>
                 </StackPanel>
             </Border>
 
@@ -42,18 +37,6 @@
                     <Separator/>
                     <CheckBox Content="Enable Sound" IsChecked="True"/>
                     <CheckBox Content="Enable Desktop Notifications" IsChecked="True"/>
-                    <CheckBox Content="Start With System"/>
-                </StackPanel>
-            </Border>
-
-            <!-- Appearance -->
-
-            <Border Background="White" CornerRadius="15" Padding="20">
-                <StackPanel Spacing="15">
-                    <TextBlock Text="Appearance" FontSize="22" FontWeight="Bold"/>
-                    <Separator/>
-                    <RadioButton GroupName="Theme" Content="Light Theme" IsChecked="True"/>
-                    <RadioButton GroupName="Theme"  Content="Dark Theme"/>
                 </StackPanel>
             </Border>
 
