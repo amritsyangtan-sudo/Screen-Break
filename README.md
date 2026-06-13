@@ -1,6 +1,6 @@
 <div align="center">
 
-# 👁️ screenBreak
+# screenBreak
 
 **A cross-platform desktop app to remind you to take breaks and protect your eyes.**  
 Built with **C#**, **Avalonia UI**, and **MVVM** architecture.
@@ -22,3 +22,33 @@ Built with **C#**, **Avalonia UI**, and **MVVM** architecture.
 > Dashboard — Work timer, session info, break statistics, and progress tracking.
 
 ![screenBreak Dashboard](Assets/Screenshot.png)
+
+
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [.NET 8 SDK](https://dotnet.microsoft.com/download)
+
+### Clone & Run
+
+```bash
+git clone https://github.com/amritsyangtan-sudo/Screen-Break.git
+cd Screen-Break
+dotnet run
+```
+
+### Build
+
+```bash
+dotnet build
+```
+
+### Publish (Windows self-contained)
+
+```bash
+dotnet publish -c Release -r win-x64 --self-contained
+```
+
+---
