@@ -184,11 +184,11 @@
 
                 <Button Content="Pause"
                         Width="120"
-                        Height="40"/>
+                        Height="40" Background="LimeGreen" VerticalAlignment="Center" Foreground="White"/>
 
                 <Button Content="Skip"
                         Width="120"
-                        Height="40"/>
+                        Height="40" Background="LimeGreen" VerticalAlignment="Center" Foreground="White"/>
 
             </StackPanel>
 
@@ -196,35 +196,151 @@
 
     </Grid>
 
-</Border>                    <!-- Statistics Section -->
-                    <Grid ColumnDefinitions="*,*"
-                          Margin="0,20,0,0">
+</Border>                  
+<!-- Statistics Section -->
+<Grid ColumnDefinitions="*,*"
+      Margin="0,20,0,0">
 
-                        <Border Grid.Column="0"
-                                Height="200"
-                                Background="White"
-                                CornerRadius="15"
-                                Margin="0,0,10,0">
+    <!-- Break Statistics -->
 
-                            <TextBlock Text="Break Statistics"
-                                       HorizontalAlignment="Center"
-                                       VerticalAlignment="Center" FontFamily="Consolas"/>
+    <Border Grid.Column="0"
+            Background="White"
+            CornerRadius="15"
+            Padding="20"
+            Margin="0,0,10,0">
 
-                        </Border>
+        <StackPanel>
 
-                        <Border Grid.Column="1"
-                                Height="200"
-                                Background="White"
-                                CornerRadius="15">
+            <TextBlock Text="Break Statistics"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       FontFamily="Consolas"/>
 
-                            <TextBlock Text="Progress"
-                                       HorizontalAlignment="Center"
-                                       VerticalAlignment="Center" FontFamily="Consolas"/>
+            <Separator Margin="0,10"/>
 
-                        </Border>
+            <Grid RowDefinitions="Auto,Auto,Auto">
 
-                    </Grid>
+                <Grid Grid.Row="0"
+                      ColumnDefinitions="*,Auto"
+                      Margin="0,10">
 
+                    <TextBlock Text="Today's Breaks"
+                               FontFamily="Consolas"/>
+
+                    <TextBlock Grid.Column="1"
+                               Text="6"
+                               FontWeight="Bold"
+                               Foreground="LimeGreen"
+                               FontFamily="Consolas"/>
+
+                </Grid>
+
+                <Grid Grid.Row="1"
+                      ColumnDefinitions="*,Auto"
+                      Margin="0,10">
+
+                    <TextBlock Text="Total Breaks"
+                               FontFamily="Consolas"/>
+
+                    <TextBlock Grid.Column="1"
+                               Text="48"
+                               FontWeight="Bold"
+                               Foreground="LimeGreen"
+                               FontFamily="Consolas"/>
+
+                </Grid>
+
+                <Grid Grid.Row="2"
+                      ColumnDefinitions="*,Auto"
+                      Margin="0,10">
+
+                    <TextBlock Text="Focus Time"
+                               FontFamily="Consolas"/>
+
+                    <TextBlock Grid.Column="1"
+                               Text="120 min"
+                               FontWeight="Bold"
+                               Foreground="LimeGreen"
+                               FontFamily="Consolas"/>
+
+                </Grid>
+
+            </Grid>
+
+        </StackPanel>
+
+    </Border>
+
+    <!-- Progress -->
+
+    <Border Grid.Column="1"
+            Background="White"
+            CornerRadius="15"
+            Padding="20">
+
+        <StackPanel>
+
+            <TextBlock Text="Progress"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       FontFamily="Consolas"/>
+
+            <Separator Margin="0,10"/>
+
+            <Grid RowDefinitions="Auto,Auto,Auto">
+
+                <Grid Grid.Row="0"
+                      ColumnDefinitions="*,Auto"
+                      Margin="0,10">
+
+                    <TextBlock Text="Daily Goal"
+                               FontFamily="Consolas"/>
+
+                    <TextBlock Grid.Column="1"
+                               Text="12 / 12"
+                               FontWeight="Bold"
+                               Foreground="LimeGreen"
+                               FontFamily="Consolas"/>
+
+                </Grid>
+
+                <Grid Grid.Row="1"
+                      ColumnDefinitions="*,Auto"
+                      Margin="0,10">
+
+                    <TextBlock Text="Current Streak"
+                               FontFamily="Consolas"/>
+
+                    <TextBlock Grid.Column="1"
+                               Text="5 Days"
+                               FontWeight="Bold"
+                               Foreground="Orange"
+                               FontFamily="Consolas"/>
+
+                </Grid>
+
+                <Grid Grid.Row="2"
+                      ColumnDefinitions="*,Auto"
+                      Margin="0,10">
+
+                    <TextBlock Text="Success Rate"
+                               FontFamily="Consolas"/>
+
+                    <TextBlock Grid.Column="1"
+                               Text="95%"
+                               FontWeight="Bold"
+                               Foreground="DodgerBlue"
+                               FontFamily="Consolas"/>
+
+                </Grid>
+
+            </Grid>
+
+        </StackPanel>
+
+    </Border>
+
+</Grid>
                 </StackPanel>
 
             </Border>
