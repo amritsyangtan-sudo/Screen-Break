@@ -43,7 +43,7 @@
 
             <!-- Buttons -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
-             <Button Content="Reset" Width="120" Height="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+             <Button Click="ResetSettings_Click" Content="Reset" Width="120" Height="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <Button Click="SaveSettings_Click" Content="Save Settings" Width="140" Height="40" Background="LimeGreen" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             </StackPanel>
         </StackPanel>

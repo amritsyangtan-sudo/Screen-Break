@@ -10,6 +10,8 @@ namespace ScreenBreak.Views;
 
 public partial class SettingsView : UserControl
 {
+    private UserSettings _userSettings = new UserSettings();
+    private SettingsService _settinggService = new SettingsService();
     public SettingsView()
     {
         InitializeComponent();
@@ -27,20 +29,25 @@ public partial class SettingsView : UserControl
             EnableNotifications = EnableNotificationCheckBox.IsChecked ?? false
         };
 
-
-        var userSettingsService = new SettingsService();
-        userSettingsService.SaveSettings(settings);
+        _settinggService.SaveSettings(settings);
 
     }
 
     private void LoadUserSettings()
     {
-        SettingsService settingsService = new SettingsService();
-        UserSettings userSettings = settingsService.LoadSettings();
-        WorkMinuteTextBox.Text = userSettings.WorkMinutes.ToString();
-        BreakDurationTextBox.Text = userSettings.BreakSeconds.ToString();
-        EnableNotificationCheckBox.IsChecked = userSettings.EnableSound;
-        EnableNotificationCheckBox.IsChecked = userSettings.EnableNotifications;
+        _userSettings = _settinggService.LoadSettings();
+        WorkMinuteTextBox.Text = _userSettings.WorkMinutes.ToString();
+        BreakDurationTextBox.Text = _userSettings.BreakSeconds.ToString();
+        EnableSoundCheckBox.IsChecked = _userSettings.EnableSound;
+        EnableNotificationCheckBox.IsChecked = _userSettings.EnableNotifications;
+    }
 
+    public void ResetSettings_Click(object? sender, RoutedEventArgs e)
+    {
+        var resetSettings = new UserSettings();
+        WorkMinuteTextBox.Text = resetSettings.WorkMinutes.ToString();
+        BreakDurationTextBox.Text = resetSettings.BreakSeconds.ToString();
+        EnableSoundCheckBox.IsChecked = resetSettings.EnableSound;
+        EnableNotificationCheckBox.IsChecked = resetSettings.EnableNotifications;
     }
 }
