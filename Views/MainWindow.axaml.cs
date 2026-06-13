@@ -1,4 +1,7 @@
 using Avalonia.Controls;
+using ScreenBreak.Models;
+using ScreenBreak.Services;
+using System;
 
 namespace ScreenBreak.Views
 {
@@ -7,6 +10,13 @@ namespace ScreenBreak.Views
         public MainWindow()
         {
             InitializeComponent();
+
+            //var service = new SettingsService();
+            //service.SaveSettings(new UserSettings());
+            //UserSettings userSettings = service.LoadSettings();
+            //Console.WriteLine(userSettings.EnableSound);
+            //Console.WriteLine(userSettings.BreakSeconds);
+            
         }
 
         public void Dashboard_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

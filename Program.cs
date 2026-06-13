@@ -1,4 +1,6 @@
 ﻿using Avalonia;
+using ScreenBreak.Models;
+using ScreenBreak.Services;
 using System;
 
 namespace ScreenBreak
@@ -21,5 +23,10 @@ namespace ScreenBreak
 #endif
                 .WithInterFont()
                 .LogToTrace();
+
+
+      
     }
+
+
 }
