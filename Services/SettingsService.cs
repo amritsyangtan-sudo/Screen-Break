@@ -13,7 +13,9 @@ namespace ScreenBreak.Services
         public void SaveSettings(UserSettings userSettings)
         {
             string userSettingsJson = JsonSerializer.Serialize(userSettings, new JsonSerializerOptions { WriteIndented = true });
+
             File.WriteAllText(FileName, userSettingsJson);
+
         }
 
         public UserSettings LoadSettings()

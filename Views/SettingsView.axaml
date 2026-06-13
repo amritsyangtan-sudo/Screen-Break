@@ -19,12 +19,12 @@
 
                     <Grid ColumnDefinitions="200,*">
                         <TextBlock Text="Work Duration" VerticalAlignment="Center"/>
-                        <TextBox Grid.Column="1" Text="20" />
+                        <TextBox x:Name="WorkMinuteTextBox" Grid.Column="1" Text="20" />
                     </Grid>
 
                     <Grid ColumnDefinitions="200,*">
                         <TextBlock Text="Break Duration" VerticalAlignment="Center"/>
-                        <TextBox Grid.Column="1" Text="20" />
+                        <TextBox x:Name="BreakDurationTextBox" Grid.Column="1" Text="20" />
                     </Grid>
                 </StackPanel>
             </Border>
@@ -35,8 +35,8 @@
                 <StackPanel Spacing="15">
                     <TextBlock Text="Notifications" FontSize="22" FontWeight="Bold"/>
                     <Separator/>
-                    <CheckBox Content="Enable Sound" IsChecked="True"/>
-                    <CheckBox Content="Enable Desktop Notifications" IsChecked="True"/>
+                    <CheckBox x:Name="EnableSoundCheckBox" Content="Enable Sound" IsChecked="True"/>
+                    <CheckBox x:Name="EnableNotificationCheckBox" Content="Enable Desktop Notifications" IsChecked="True"/>
                 </StackPanel>
             </Border>
 
@@ -44,7 +44,7 @@
             <!-- Buttons -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
              <Button Content="Reset" Width="120" Height="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Button Content="Save Settings" Width="140" Height="40" Background="LimeGreen" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Click="SaveSettings_Click" Content="Save Settings" Width="140" Height="40" Background="LimeGreen" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             </StackPanel>
         </StackPanel>
 
