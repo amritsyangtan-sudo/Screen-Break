@@ -24,6 +24,21 @@ Built with **C#**, **Avalonia UI**, and **MVVM** architecture.
 ![screenBreak Dashboard](Assets/Screenshot.png)
 
 
+## ✨ Features
+
+| Feature | Description |
+|---|---|
+| ⏱️ **Work Timer** | Circular countdown timer showing remaining work session time |
+| 🟢 **Break Reminders** | Automatic break scheduling with configurable intervals |
+| 👁️ **Eye Rest Guidance** | Suggested eye exercises during break time |
+| 📊 **Break Statistics** | Tracks today's breaks, total breaks, and focus time |
+| 📈 **Progress Tracking** | Daily goal, current streak, and success rate |
+| ⏸️ **Pause & Skip** | Full session control — pause or skip the current break |
+| 🕘 **Break History** | Review past break sessions |
+| ⚙️ **Settings** | Customize timer intervals and preferences |
+
+---
+
 
 ## 🚀 Getting Started
 
