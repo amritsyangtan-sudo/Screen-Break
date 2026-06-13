@@ -1,0 +1,72 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="ScreenBreak.Views.SettingsView">
+
+    <ScrollViewer>
+
+        <StackPanel Margin="20" Spacing="15">
+
+            <!-- Title -->
+
+            <TextBlock Text="Settings" FontSize="28" FontWeight="Bold"/>
+            <TextBlock Text="Configure your screen break preferences."/>
+            <!-- Work Session Settings -->
+
+            <Border Background="White" CornerRadius="15" Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Work Session" FontSize="22" FontWeight="Bold"/>
+                    <Separator/>
+
+                    <Grid ColumnDefinitions="200,*">
+                        <TextBlock Text="Work Duration" VerticalAlignment="Center"/>
+                        <TextBox Grid.Column="1" Text="20" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="200,*">
+                        <TextBlock Text="Break Duration" VerticalAlignment="Center"/>
+                        <TextBox Grid.Column="1" Text="20" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="200,*">
+                        <TextBlock Text="Long Break Duration"  VerticalAlignment="Center"/>
+                        <TextBox Grid.Column="1" Text="5"/>
+                    </Grid>
+
+                </StackPanel>
+
+            </Border>
+
+            <!-- Notifications -->
+
+            <Border Background="White" CornerRadius="15" Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Notifications" FontSize="22" FontWeight="Bold"/>
+                    <Separator/>
+                    <CheckBox Content="Enable Sound" IsChecked="True"/>
+                    <CheckBox Content="Enable Desktop Notifications" IsChecked="True"/>
+                    <CheckBox Content="Start With System"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Appearance -->
+
+            <Border Background="White" CornerRadius="15" Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Appearance" FontSize="22" FontWeight="Bold"/>
+                    <Separator/>
+                    <RadioButton GroupName="Theme" Content="Light Theme" IsChecked="True"/>
+                    <RadioButton GroupName="Theme"  Content="Dark Theme"/>
+                </StackPanel>
+            </Border>
+
+
+            <!-- Buttons -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+             <Button Content="Reset" Width="120" Height="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Content="Save Settings" Width="140" Height="40" Background="LimeGreen" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+
+    </ScrollViewer>
+
+</UserControl>

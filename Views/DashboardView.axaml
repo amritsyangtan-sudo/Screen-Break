@@ -1,0 +1,256 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ScreenBreak.Views.DashboardView">
+                <StackPanel Margin="20">
+
+                    <!-- Greeting -->
+                    <TextBlock Text="Screen Break !"
+                               FontSize="28"
+                               FontWeight="Bold" />
+
+                    <TextBlock Text="Take breaks. Protect your eyes."
+                               Margin="0,10,0,20" />
+
+                    <!-- Timer Card -->
+<!-- Timer Card -->
+<Border Height="350"
+        Background="White"
+        CornerRadius="15"
+        Padding="20">
+
+    <Grid ColumnDefinitions="*,*">
+
+        <!-- Left Side -->
+        <Border Grid.Column="0"
+                Width="300"
+                Height="300"
+                CornerRadius="225"
+                BorderBrush="LimeGreen"
+                BorderThickness="12"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+
+            <StackPanel VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+
+                <TextBlock Text="Work Time"
+                           FontSize="18"
+                           HorizontalAlignment="Center"  FontFamily="Poppins"/>
+
+                <TextBlock Text="20:00:00"
+                           FontSize="54"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           FontFamily="Consolas"/>
+
+                <Border Background="#E8F5E9"
+                        CornerRadius="10"
+                        Padding="8"
+                        Margin="0,10,0,0">
+
+                    <TextBlock Text="20 min"
+                               HorizontalAlignment="Center"/>
+
+                </Border>
+
+            </StackPanel>
+
+        </Border>
+
+        <!-- Right Side -->
+        <StackPanel Grid.Column="1"
+                    Margin="20">
+
+            <TextBlock Text="Current Session"
+                       FontSize="28"  FontFamily="Poppins" FontWeight="Bold"/>
+
+            <TextBlock Text="Work Time"
+                       FontSize="32"
+                       FontWeight="SemiBold"
+                       Foreground="Green"
+                       Margin="0,10,0,10" FontFamily="Poppins"/>
+
+            <TextBlock Text="Focus on your work. You're doing great!"
+                       TextWrapping="Wrap"
+                       Margin="0,0,0,20" FontFamily="Consolas"/>
+
+            <Separator Margin="0,0,0,5" Background="LimeGreen"/>
+
+            <TextBlock Text="Next Break"
+                       FontSize="18"
+                       FontWeight="SemiBold" FontFamily="Poppins"/>
+
+            <TextBlock Text="20 seconds"
+                       Margin="0,5" FontFamily="Poppins"/>
+
+            <TextBlock Text="Rest your eyes"
+                       Foreground="DodgerBlue" FontFamily="Poppins"/>
+
+            <StackPanel Orientation="Horizontal"
+                        Spacing="15"
+                        Margin="0,30,0,0">
+
+                <Button Content="Pause"
+                        Width="120"
+                        Height="40" Background="LimeGreen" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White"/>
+
+                <Button Content="Skip"
+                        Width="120"
+                        Height="40" Background="LimeGreen"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White"/>
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+
+</Border>                  
+<!-- Statistics Section -->
+<Grid ColumnDefinitions="*,*"
+      Margin="0,20,0,0">
+
+    <!-- Break Statistics -->
+
+    <Border Grid.Column="0"
+            Background="White"
+            CornerRadius="15"
+            Padding="20"
+            Margin="0,0,10,0">
+
+        <StackPanel>
+
+            <TextBlock Text="Break Statistics"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       FontFamily="Poppins"/>
+
+            <Separator Margin="0,10"/>
+
+            <Grid RowDefinitions="Auto,Auto,Auto">
+
+                <Grid Grid.Row="0"
+                      ColumnDefinitions="*,Auto"
+                      Margin="0,10">
+
+                    <TextBlock Text="Today's Breaks"
+                               FontFamily="Poppins"/>
+
+                    <TextBlock Grid.Column="1"
+                               Text="6"
+                               FontWeight="Bold"
+                               Foreground="LimeGreen"
+                               FontFamily="Poppins"/>
+
+                </Grid>
+
+                <Grid Grid.Row="1"
+                      ColumnDefinitions="*,Auto"
+                      Margin="0,10">
+
+                    <TextBlock Text="Total Breaks"
+                               FontFamily="Poppins"/>
+
+                    <TextBlock Grid.Column="1"
+                               Text="48"
+                               FontWeight="Bold"
+                               Foreground="LimeGreen"
+                               FontFamily="Poppins"/>
+
+                </Grid>
+
+                <Grid Grid.Row="2"
+                      ColumnDefinitions="*,Auto"
+                      Margin="0,10">
+
+                    <TextBlock Text="Focus Time"
+                               FontFamily="Poppins"/>
+
+                    <TextBlock Grid.Column="1"
+                               Text="120 min"
+                               FontWeight="Bold"
+                               Foreground="LimeGreen"
+                               FontFamily="Poppins"/>
+
+                </Grid>
+
+            </Grid>
+
+        </StackPanel>
+
+    </Border>
+
+    <!-- Progress -->
+
+    <Border Grid.Column="1"
+            Background="White"
+            CornerRadius="15"
+            Padding="20">
+
+        <StackPanel>
+
+            <TextBlock Text="Progress"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       FontFamily="Poppins"/>
+
+            <Separator Margin="0,10"/>
+
+            <Grid RowDefinitions="Auto,Auto,Auto">
+
+                <Grid Grid.Row="0"
+                      ColumnDefinitions="*,Auto"
+                      Margin="0,10">
+
+                    <TextBlock Text="Daily Goal"
+                               FontFamily="Poppins"/>
+
+                    <TextBlock Grid.Column="1"
+                               Text="12 / 12"
+                               FontWeight="Bold"
+                               Foreground="LimeGreen"
+                               FontFamily="Poppins"/>
+
+                </Grid>
+
+                <Grid Grid.Row="1"
+                      ColumnDefinitions="*,Auto"
+                      Margin="0,10">
+
+                    <TextBlock Text="Current Streak"
+                               FontFamily="Poppins"/>
+
+                    <TextBlock Grid.Column="1"
+                               Text="5 Days"
+                               FontWeight="Bold"
+                               Foreground="Orange"
+                               FontFamily="Poppins"/>
+
+                </Grid>
+
+                <Grid Grid.Row="2"
+                      ColumnDefinitions="*,Auto"
+                      Margin="0,10">
+
+                    <TextBlock Text="Success Rate"
+                               FontFamily="Poppins"/>
+
+                    <TextBlock Grid.Column="1"
+                               Text="95%"
+                               FontWeight="Bold"
+                               Foreground="DodgerBlue"
+                               FontFamily="Poppins"/>
+
+                </Grid>
+
+            </Grid>
+
+        </StackPanel>
+
+    </Border>
+
+</Grid>
+                </StackPanel>
+</UserControl>
