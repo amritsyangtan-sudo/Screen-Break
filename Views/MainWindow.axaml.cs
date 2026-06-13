@@ -8,5 +8,15 @@ namespace ScreenBreak.Views
         {
             InitializeComponent();
         }
+
+        public void Dashboard_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            MainContent.Content = new DashboardView();
+        }
+
+        public void Settings_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            MainContent.Content = new SettingsView();
+        }
     }
 }

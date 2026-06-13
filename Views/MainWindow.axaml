@@ -17,117 +17,53 @@
     </Design.DataContext>
 
     <Grid RowDefinitions="60,*">
-
         <!-- Header -->
-<!-- Header -->
-<Border Grid.Row="0"
-        CornerRadius="0,0,0,0">
+        <Border Grid.Row="0" CornerRadius="0,0,0,0">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#4ADE80" Offset="0"/>
+                    <GradientStop Color="#22C55E" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
 
-    <Border.Background>
+            <Grid ColumnDefinitions="*,Auto">
+                <TextBlock Text="screenBreak" FontSize="26" FontWeight="Bold" Margin="40,0" VerticalAlignment="Center" FontFamily="Poppins" Foreground="White"/>
+            </Grid>
 
-        <LinearGradientBrush StartPoint="0,0"
-                             EndPoint="1,0">
+        </Border>
 
-            <GradientStop Color="#4ADE80"
-                          Offset="0"/>
 
-            <GradientStop Color="#22C55E"
-                          Offset="1"/>
-
-        </LinearGradientBrush>
-
-    </Border.Background>
-
-    <Grid ColumnDefinitions="*,Auto">
-
-        <TextBlock Text="screenBreak"
-                   FontSize="26"
-                   FontWeight="Bold"
-                   Margin="40,0"
-                   VerticalAlignment="Center"
-                   FontFamily="Poppins"
-                   Foreground="White"/>
-
-    </Grid>
-
-</Border>
-
-        <!-- Body -->
+                <!-- Body -->
         <Grid Grid.Row="1" ColumnDefinitions="220,*">
-
+            
             <!-- Sidebar -->
+            <Border Grid.Column="0" Background="GhostWhite">
+                <StackPanel Margin="15">
+            
+                    <!-- Active Menu -->
+                    <Button Classes="MenuButton" Click="Dashboard_Click" Background="Transparent" CornerRadius="8" Padding="12" Margin="0,5" Width="200">
+                        <TextBlock Text="Dashboard" FontFamily="Poppins" FontWeight="SemiBold" Foreground="Black"/>
+                    </Button>
+                    <Border Background="Transparent" CornerRadius="8" Padding="12" Margin="0,5">
+                        <TextBlock Text="Timer" FontFamily="Poppins" FontWeight="SemiBold"/>
+                    </Border>
+                    <Border Background="Transparent" CornerRadius="8" Padding="12" Margin="0,5">
+                        <TextBlock Text="Break History" FontWeight="SemiBold" FontFamily="Poppins"/>
+                    </Border>
+                    <Border Background="Transparent" CornerRadius="8" Padding="12" Margin="0,5">
+                        <TextBlock Text="Eye Exercises" FontWeight="SemiBold" FontFamily="Poppins" />
+                    </Border>
+                    <Button Classes="MenuButton" Click="Settings_Click" Background="Transparent" CornerRadius="8" Padding="12" Margin="0,5" Width="200">
+                        <TextBlock Text="Settings" FontFamily="Poppins" FontWeight="SemiBold" Foreground="Black"/>
+                    </Button>
+                </StackPanel>
 
-<!-- Sidebar -->
-<Border Grid.Column="0"
-        Background="GhostWhite">
+            </Border>
 
-    <StackPanel Margin="15">
-
-        <!-- Active Menu -->
-
-        <Border Background="#22C55E"
-                CornerRadius="2"
-                Padding="12"
-                Margin="0,5">
-
-            <TextBlock Text="Dashboard"
-                       FontFamily="Poppins"
-                       FontWeight="SemiBold"
-                       Foreground="White"/>
-
-        </Border>
-
-        <Border Background="Transparent"
-                CornerRadius="8"
-                Padding="12"
-                Margin="0,5">
-
-            <TextBlock Text="Timer"
-                       FontFamily="Poppins" FontWeight="SemiBold"
-                       />
-
-        </Border>
-
-        <Border Background="Transparent"
-                CornerRadius="8"
-                Padding="12"
-                Margin="0,5">
-
-            <TextBlock Text="Break History" FontWeight="SemiBold"
-                       FontFamily="Poppins"
-                       />
-
-        </Border>
-
-        <Border Background="Transparent"
-                CornerRadius="8"
-                Padding="12"
-                Margin="0,5">
-
-            <TextBlock Text="Eye Exercises" FontWeight="SemiBold"
-                       FontFamily="Poppins"
-                       />
-
-        </Border>
-
-        <Border Background="Transparent"
-                CornerRadius="8"
-                Padding="12"
-                Margin="0,5">
-
-            <TextBlock Text="Settings" FontWeight="SemiBold"
-                       FontFamily="Poppins"
-                       />
-
-        </Border>
-
-    </StackPanel>
-
-</Border>
 
             <!-- Main Content -->
             <Border Grid.Column="1" Background="WhiteSmoke" Margin="5">
-                <ContentControl Content="{Binding CurrentView}" />
+                <ContentControl x:Name="MainContent" Content="{Binding CurrentView}" />
             </Border>
         </Grid>
 

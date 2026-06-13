@@ -25,7 +25,6 @@
                     <TextBlock Text="20 min" HorizontalAlignment="Center"/>
                 </Border>
             </StackPanel>
-
         </Border>
 
         <!-- Right Side -->
