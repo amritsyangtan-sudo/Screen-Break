@@ -9,7 +9,7 @@ Built with **C#**, **Avalonia UI**, and **MVVM** architecture.
 ![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![Language](https://img.shields.io/badge/Language-C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
 ![UI](https://img.shields.io/badge/UI-Avalonia-purple?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-In%20Development-red?style=for-the-badge)
 
 > 🧠 *"Take breaks. Protect your eyes."* — Built for developers and anyone spending long hours in front of a screen.
 
