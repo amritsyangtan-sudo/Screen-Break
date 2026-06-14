@@ -16,6 +16,10 @@ public partial class DashboardView : UserControl
     private UserSettings _userSettings = new UserSettings();
     private int _remainingSeconds;
     private DispatcherTimer _timer = new();
+    private int _workSeconds;
+    private int _breakSeconds;
+    private bool _isWorkSession = true;
+
     public DashboardView()
     {
         InitializeComponent();
@@ -26,8 +30,10 @@ public partial class DashboardView : UserControl
 
     private void LoadSettings()
     {
-      _userSettings = _settingService.LoadSettings();
-        _remainingSeconds = _userSettings.WorkMinutes * 60;
+        _userSettings = _settingService.LoadSettings();
+        _workSeconds = _userSettings.WorkMinutes * 60;
+        _breakSeconds = _userSettings.BreakSeconds;
+        _remainingSeconds = _workSeconds;
         UpdateTimerDisplay();
 
     }
@@ -51,20 +57,37 @@ public partial class DashboardView : UserControl
         }
         else
         {
-            _timer.Stop();
-            CurrentSessionTextBox.Text = "Break Time";
-            CurrentSessionRing.Text = "Break Time";
+
+            SwitchSession();
         }
     }
 
     private void StartButton_Click(object ? sender, RoutedEventArgs e)
     {
-        LoadSettings();
         _timer.Start();
     }
 
     private void PauseButton_Click(object ? sender, RoutedEventArgs e)
     {
         _timer.Stop();
+    }
+
+    private void SwitchSession()
+    {
+        if (_isWorkSession)
+        {
+            _isWorkSession = false;
+            _remainingSeconds = _breakSeconds;
+            CurrentSessionTextBox.Text = "Break Time";
+            CurrentSessionRing.Text = "Break Time";
+        }
+        else
+        {
+            _isWorkSession = true;
+            _remainingSeconds = _workSeconds;
+            CurrentSessionTextBox.Text = "Work Time";
+            CurrentSessionRing.Text = "Work Time";
+        }
+        UpdateTimerDisplay();
     }
 }
