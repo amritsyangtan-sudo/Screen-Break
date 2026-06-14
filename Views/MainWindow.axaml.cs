@@ -13,6 +13,8 @@ namespace ScreenBreak.Views
             InitializeComponent();
 
             HistoryService historyService = new();
+            SettingsService settingsService = new SettingsService();
+            UserSettings userSettings = settingsService.LoadSettings();
 
             List<SessionRecord> records =
                 historyService.LoadHistory();
@@ -23,7 +25,7 @@ namespace ScreenBreak.Views
                     StartTime = DateTime.Now.AddMinutes(-20),
                     EndTime = DateTime.Now,
                     SessionType = "Work",
-                    DurationSeconds = 1200,
+                    DurationSeconds = userSettings.WorkMinutes,
                     Completed = true
                 });
 

@@ -67,6 +67,7 @@ public partial class DashboardView : UserControl
 
     private void StartButton_Click(object ? sender, RoutedEventArgs e)
     {
+        _sessionStartTime = DateTime.Now;
         _timer.Start();
     }
 
@@ -77,7 +78,8 @@ public partial class DashboardView : UserControl
 
     private void SwitchSession()
     {
-      //  PlayNotificationSound();
+        SaveSessionRecord();
+        //  PlayNotificationSound();
         if (_isWorkSession)
         {
             _isWorkSession = false;
@@ -85,7 +87,7 @@ public partial class DashboardView : UserControl
             CurrentSessionTextBox.Text = "Break Time";
             CurrentSessionRing.Text = "Break Time";
             TimerRing.BorderBrush = Avalonia.Media.Brushes.DodgerBlue;
-            SaveSessionRecord();
+            
 
         }
         else
@@ -95,7 +97,7 @@ public partial class DashboardView : UserControl
             CurrentSessionTextBox.Text = "Work Time";
             CurrentSessionRing.Text = "Work Time";
             TimerRing.BorderBrush = Avalonia.Media.Brushes.LimeGreen;
-            SaveSessionRecord();
+           // SaveSessionRecord();
         }
         UpdateTimerDisplay();
     }
