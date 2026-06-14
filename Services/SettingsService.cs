@@ -9,20 +9,20 @@ namespace ScreenBreak.Services
 {
     public class SettingsService
     {
-        private const string FileName = "settings.json";
+        private const string SettingsFileName = "settings.json";
         public void SaveSettings(UserSettings userSettings)
         {
             string userSettingsJson = JsonSerializer.Serialize(userSettings, new JsonSerializerOptions { WriteIndented = true });
 
-            File.WriteAllText(FileName, userSettingsJson);
+            File.WriteAllText(SettingsFileName, userSettingsJson);
 
         }
 
         public UserSettings LoadSettings()
         {
-            if (File.Exists(FileName))
+            if (File.Exists(SettingsFileName))
             {
-                string userSettingsJson = File.ReadAllText(FileName);
+                string userSettingsJson = File.ReadAllText(SettingsFileName);
                 UserSettings? userSettings = JsonSerializer.Deserialize<UserSettings>(userSettingsJson);
                 if(userSettings != null)
                 {

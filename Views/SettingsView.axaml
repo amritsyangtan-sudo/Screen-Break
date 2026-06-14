@@ -18,12 +18,12 @@
                     <Separator/>
 
                     <Grid ColumnDefinitions="200,*">
-                        <TextBlock Text="Work Duration" VerticalAlignment="Center"/>
+                        <TextBlock Text="Work Duration (in Minutes)" VerticalAlignment="Center"/>
                         <TextBox x:Name="WorkMinuteTextBox" Grid.Column="1" Text="20" />
                     </Grid>
 
                     <Grid ColumnDefinitions="200,*">
-                        <TextBlock Text="Break Duration" VerticalAlignment="Center"/>
+                        <TextBlock Text="Break Duration (in seconds)" VerticalAlignment="Center"/>
                         <TextBox x:Name="BreakDurationTextBox" Grid.Column="1" Text="20" />
                     </Grid>
                 </StackPanel>

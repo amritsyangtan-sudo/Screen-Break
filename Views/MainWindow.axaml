@@ -47,9 +47,9 @@
                     <Border Background="Transparent" CornerRadius="8" Padding="12" Margin="0,5">
                         <TextBlock Text="Timer" FontFamily="Poppins" FontWeight="SemiBold"/>
                     </Border>
-                    <Border Background="Transparent" CornerRadius="8" Padding="12" Margin="0,5">
-                        <TextBlock Text="Break History" FontWeight="SemiBold" FontFamily="Poppins"/>
-                    </Border>
+                    <Button Classes="MenuButton" Click="History_Click" Background="Transparent" CornerRadius="8" Padding="12" Margin="0,5" Width="200">
+                        <TextBlock Text="History" FontWeight="SemiBold" FontFamily="Poppins"/>
+                    </Button>
                     <Border Background="Transparent" CornerRadius="8" Padding="12" Margin="0,5">
                         <TextBlock Text="Eye Exercises" FontWeight="SemiBold" FontFamily="Poppins" />
                     </Border>

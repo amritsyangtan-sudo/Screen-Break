@@ -6,6 +6,8 @@ using ScreenBreak.Services;
 using ScreenBreak.Models;
 using System;
 using Avalonia.Threading;
+using System.Media;
+
 
 
 namespace ScreenBreak.Views;
@@ -51,8 +53,6 @@ public partial class DashboardView : UserControl
         if(_remainingSeconds > 0)
         {
             _remainingSeconds--;
-            CurrentSessionTextBox.Text = "Work Time";
-            CurrentSessionRing.Text = "Work Time";
             UpdateTimerDisplay();
         }
         else
@@ -74,12 +74,15 @@ public partial class DashboardView : UserControl
 
     private void SwitchSession()
     {
+        PlayNotificationSound();
         if (_isWorkSession)
         {
             _isWorkSession = false;
             _remainingSeconds = _breakSeconds;
             CurrentSessionTextBox.Text = "Break Time";
             CurrentSessionRing.Text = "Break Time";
+            TimerRing.BorderBrush = Avalonia.Media.Brushes.DodgerBlue;
+
         }
         else
         {
@@ -87,7 +90,16 @@ public partial class DashboardView : UserControl
             _remainingSeconds = _workSeconds;
             CurrentSessionTextBox.Text = "Work Time";
             CurrentSessionRing.Text = "Work Time";
+            TimerRing.BorderBrush = Avalonia.Media.Brushes.LimeGreen;
         }
         UpdateTimerDisplay();
+    }
+
+    private void PlayNotificationSound()
+    {
+        if (_userSettings.EnableSound)
+        {
+            Console.Beep();
+        }
     }
 }

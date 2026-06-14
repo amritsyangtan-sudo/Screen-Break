@@ -28,5 +28,10 @@ namespace ScreenBreak.Views
         {
             MainContent.Content = new SettingsView();
         }
+
+        public void History_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            MainContent.Content = new HistoryView();
+        }
     }
 }
