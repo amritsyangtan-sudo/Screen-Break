@@ -30,3 +30,17 @@ namespace ScreenBreak
 
 
 }
+
+
+/*
+ 1. TimerService
+2. Work/Break Switching
+3. SessionRecord Model
+4. HistoryService
+5. Statistics Calculation
+6. Notifications
+7. History Page
+8. Eye Exercises Page
+9. Refactor Architecture
+10. UI Enhancements
+*/

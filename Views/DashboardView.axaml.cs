@@ -37,6 +37,7 @@ public partial class DashboardView : UserControl
         TimeSpan time = TimeSpan.FromSeconds(_remainingSeconds);
         TimerTextBlock.Text = time.ToString(@"mm\:ss");
         TimerHintBlock.Text = time.ToString(@"mm\:ss");
+      
     }
 
     private void TimerTick(object ? sender, EventArgs e)
@@ -44,16 +45,21 @@ public partial class DashboardView : UserControl
         if(_remainingSeconds > 0)
         {
             _remainingSeconds--;
+            CurrentSessionTextBox.Text = "Work Time";
+            CurrentSessionRing.Text = "Work Time";
             UpdateTimerDisplay();
         }
         else
         {
             _timer.Stop();
+            CurrentSessionTextBox.Text = "Break Time";
+            CurrentSessionRing.Text = "Break Time";
         }
     }
 
     private void StartButton_Click(object ? sender, RoutedEventArgs e)
     {
+        LoadSettings();
         _timer.Start();
     }
 
