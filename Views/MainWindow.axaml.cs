@@ -2,6 +2,7 @@ using Avalonia.Controls;
 using ScreenBreak.Models;
 using ScreenBreak.Services;
 using System;
+using System.Collections.Generic;
 
 namespace ScreenBreak.Views
 {
@@ -11,12 +12,23 @@ namespace ScreenBreak.Views
         {
             InitializeComponent();
 
-            //var service = new SettingsService();
-            //service.SaveSettings(new UserSettings());
-            //UserSettings userSettings = service.LoadSettings();
-            //Console.WriteLine(userSettings.EnableSound);
-            //Console.WriteLine(userSettings.BreakSeconds);
-            
+            HistoryService historyService = new();
+
+            List<SessionRecord> records =
+                historyService.LoadHistory();
+
+            records.Add(
+                new SessionRecord
+                {
+                    StartTime = DateTime.Now.AddMinutes(-20),
+                    EndTime = DateTime.Now,
+                    SessionType = "Work",
+                    DurationSeconds = 1200,
+                    Completed = true
+                });
+
+            historyService.SaveHistory(records);
+
         }
 
         public void Dashboard_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

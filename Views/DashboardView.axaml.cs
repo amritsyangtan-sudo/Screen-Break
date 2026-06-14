@@ -7,6 +7,7 @@ using ScreenBreak.Models;
 using System;
 using Avalonia.Threading;
 using System.Media;
+using System.Collections.Generic;
 
 
 
@@ -16,11 +17,13 @@ public partial class DashboardView : UserControl
 {
     private SettingsService _settingService = new SettingsService();
     private UserSettings _userSettings = new UserSettings();
+    private HistoryService _historyService = new HistoryService();
     private int _remainingSeconds;
     private DispatcherTimer _timer = new();
     private int _workSeconds;
     private int _breakSeconds;
     private bool _isWorkSession = true;
+    private DateTime _sessionStartTime;
 
     public DashboardView()
     {
@@ -74,7 +77,7 @@ public partial class DashboardView : UserControl
 
     private void SwitchSession()
     {
-        PlayNotificationSound();
+      //  PlayNotificationSound();
         if (_isWorkSession)
         {
             _isWorkSession = false;
@@ -82,6 +85,7 @@ public partial class DashboardView : UserControl
             CurrentSessionTextBox.Text = "Break Time";
             CurrentSessionRing.Text = "Break Time";
             TimerRing.BorderBrush = Avalonia.Media.Brushes.DodgerBlue;
+            SaveSessionRecord();
 
         }
         else
@@ -91,6 +95,7 @@ public partial class DashboardView : UserControl
             CurrentSessionTextBox.Text = "Work Time";
             CurrentSessionRing.Text = "Work Time";
             TimerRing.BorderBrush = Avalonia.Media.Brushes.LimeGreen;
+            SaveSessionRecord();
         }
         UpdateTimerDisplay();
     }
@@ -102,4 +107,28 @@ public partial class DashboardView : UserControl
             Console.Beep();
         }
     }
+
+    private void SaveSessionRecord()
+    {
+        List<SessionRecord> sessionRecords = _historyService.LoadHistory();
+        sessionRecords.Add(
+        new SessionRecord
+        {
+            StartTime = _sessionStartTime,
+            EndTime = DateTime.Now,
+            SessionType = _isWorkSession
+                ? "Work"
+                : "Break",
+
+            DurationSeconds =
+                _isWorkSession
+                    ? _workSeconds
+                    : _breakSeconds,
+
+            Completed = true
+        });
+
+        _historyService.SaveHistory(sessionRecords);
+    }
 }
+

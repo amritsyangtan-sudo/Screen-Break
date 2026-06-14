@@ -1,8 +1,85 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:marshalling="using:System.Runtime.InteropServices.Marshalling"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:selection="using:Avalonia.Controls.Selection"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:models="using:ScreenBreak.Models"
              x:Class="ScreenBreak.Views.HistoryView">
-  Histroy
+
+    <StackPanel Margin="20">
+
+        <TextBlock Text="History"
+                   FontSize="28"
+                   FontWeight="Bold"
+                   FontFamily="Poppins"/>
+
+        <Border Margin="0,20,0,0"
+                Background="White"
+                CornerRadius="10"
+                Padding="10">
+
+            <Grid RowDefinitions="Auto,*">
+
+                <!-- Header -->
+
+                <Grid ColumnDefinitions="2*,*,*,*">
+
+                    <TextBlock Text="Date"
+                               FontWeight="Bold"/>
+
+                    <TextBlock Grid.Column="1"
+                               Text="Type"
+                               FontWeight="Bold"/>
+
+                    <TextBlock Grid.Column="2"
+                               Text="Duration"
+                               FontWeight="Bold"/>
+
+                    <TextBlock Grid.Column="3"
+                               Text="Completed"
+                               FontWeight="Bold"/>
+
+                </Grid>
+
+
+<StackPanel Margin="20">
+<ItemsControl x:Name="HistoryItemsControl">
+
+    <ItemsControl.ItemTemplate>
+
+        <DataTemplate x:DataType="models:SessionRecord">
+
+            <Border Background="White"
+                    CornerRadius="8"
+                    Padding="10"
+                    Margin="0,5">
+
+                <Grid ColumnDefinitions="2*,*,*,*">
+
+                    <TextBlock Text="{Binding StartTime, StringFormat='{}{0:yyyy/MM/dd HH:mm:ss}'}"/>
+
+                    <TextBlock Grid.Column="1"
+                               Text="{Binding SessionType}"/>
+
+                    <TextBlock Grid.Column="2"
+                               Text="{Binding DurationSeconds}"/>
+
+                    <TextBlock Grid.Column="3"
+                               Text="{Binding Completed}"/>
+
+                </Grid>
+
+            </Border>
+
+        </DataTemplate>
+
+    </ItemsControl.ItemTemplate>
+
+</ItemsControl>
+</StackPanel>
+            </Grid>
+        </Border>
+    </StackPanel>
 </UserControl>
