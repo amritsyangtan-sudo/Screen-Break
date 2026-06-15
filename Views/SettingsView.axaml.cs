@@ -1,3 +1,4 @@
+
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -12,6 +13,7 @@ public partial class SettingsView : UserControl
 {
     private UserSettings _userSettings = new UserSettings();
     private SettingsService _settinggService = new SettingsService();
+    private JSONService _jsonService = new JSONService();
     public SettingsView()
     {
         InitializeComponent();
@@ -29,13 +31,13 @@ public partial class SettingsView : UserControl
             EnableNotifications = EnableNotificationCheckBox.IsChecked ?? false
         };
 
-        _settinggService.SaveSettings(settings);
+        _jsonService.SaveSettings("settings.json", _userSettings);
 
     }
 
     private void LoadUserSettings()
     {
-        _userSettings = _settinggService.LoadSettings();
+        _userSettings = _jsonService.LoadSettings("settings.json", _userSettings);
         WorkMinuteTextBox.Text = _userSettings.WorkMinutes.ToString();
         BreakDurationTextBox.Text = _userSettings.BreakSeconds.ToString();
         EnableSoundCheckBox.IsChecked = _userSettings.EnableSound;

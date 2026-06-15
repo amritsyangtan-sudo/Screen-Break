@@ -16,7 +16,7 @@
                 <StackPanel Spacing="15">
                     <TextBlock Text="Work Session" FontSize="22" FontWeight="Bold"/>
                     <Separator/>
-
+                            
                     <Grid ColumnDefinitions="200,*">
                         <TextBlock Text="Work Duration (in Minutes)" VerticalAlignment="Center"/>
                         <TextBox x:Name="WorkMinuteTextBox" Grid.Column="1" Text="20" />

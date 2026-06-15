@@ -1,6 +1,6 @@
 {
-  "WorkMinutes": 1,
-  "BreakSeconds": 1,
+  "WorkMinutes": 20,
+  "BreakSeconds": 20,
   "EnableSound": true,
   "EnableNotifications": true
 }
