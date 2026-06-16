@@ -1,6 +1,6 @@
 <div align="center">
 
-# screenBreak
+# ScreenBreak
 
 **A cross-platform desktop app to remind you to take breaks and protect your eyes.**  
 Built with **C#**, **Avalonia UI**, and **MVVM** architecture.
