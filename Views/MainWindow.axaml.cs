@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Avalonia.Metadata;
 using ScreenBreak.Models;
 using ScreenBreak.Services;
 using System;
@@ -8,16 +9,16 @@ namespace ScreenBreak.Views
 {
     public partial class MainWindow : Window
     {
+        private readonly UserSettings _userSettings;
         public MainWindow()
         {
             InitializeComponent();
-
+            
             HistoryService historyService = new();
-            SettingsService settingsService = new SettingsService();
-            UserSettings userSettings = settingsService.LoadSettings();
+            JSONService _jsonService = new JSONService();
+            UserSettings? userSettings = _jsonService.LoadSettings("settings.json", _userSettings);
 
-            List<SessionRecord> records =
-                historyService.LoadHistory();
+            List<SessionRecord> records = historyService.LoadHistory();
 
             records.Add(
                 new SessionRecord
