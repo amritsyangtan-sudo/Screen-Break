@@ -15,7 +15,6 @@ namespace ScreenBreak.Views;
 
 public partial class DashboardView : UserControl
 {
-    private SettingsService _settingService = new SettingsService();
     private UserSettings _userSettings = new UserSettings();
     private HistoryService _historyService = new HistoryService();
     private JSONService _jsonService = new JSONService();

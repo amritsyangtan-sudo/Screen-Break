@@ -9,9 +9,6 @@ namespace ScreenBreak.Services
 {
     public class JSONService
     {
-        private readonly SessionRecord _sessionRecord;
-        private readonly UserSettings _userSettings;
-        private readonly string fileName;
 
         //public JSONService(SessionRecord sessionRecord, UserSettings userSettings)
         //{
