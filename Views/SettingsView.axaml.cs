@@ -12,7 +12,6 @@ namespace ScreenBreak.Views;
 public partial class SettingsView : UserControl
 {
     private UserSettings _userSettings = new UserSettings();
-    private SettingsService _settinggService = new SettingsService();
     private JSONService _jsonService = new JSONService();
     public SettingsView()
     {
@@ -31,7 +30,7 @@ public partial class SettingsView : UserControl
             EnableNotifications = EnableNotificationCheckBox.IsChecked ?? false
         };
 
-        _jsonService.SaveSettings("settings.json", _userSettings);
+        _jsonService.SaveSettings("settings.json", settings);
 
     }
 

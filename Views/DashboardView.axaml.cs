@@ -18,6 +18,7 @@ public partial class DashboardView : UserControl
     private SettingsService _settingService = new SettingsService();
     private UserSettings _userSettings = new UserSettings();
     private HistoryService _historyService = new HistoryService();
+    private JSONService _jsonService = new JSONService();
     private int _remainingSeconds;
     private DispatcherTimer _timer = new();
     private int _workSeconds;
@@ -35,7 +36,7 @@ public partial class DashboardView : UserControl
 
     private void LoadSettings()
     {
-        _userSettings = _settingService.LoadSettings();
+        _userSettings = _jsonService.LoadSettings("settings.json", _userSettings);
         _workSeconds = _userSettings.WorkMinutes * 60;
         _breakSeconds = _userSettings.BreakSeconds;
         _remainingSeconds = _workSeconds;
