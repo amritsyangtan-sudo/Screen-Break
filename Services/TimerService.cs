@@ -1,11 +1,85 @@
-﻿using System;
+﻿using Avalonia.Threading;
+using ScreenBreak.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace ScreenBreak.Services
 {
     public class TimerService
     {
+        private UserSettings _userSettings;
+        private HistoryService _historyService;
+        private DispatcherTimer _timer = new();
+        private int _remainingTime;
+        private int workingTime;
+        private int breakTime;
+        private string userSettingsFile;
+        private string historyFile;
+
+
+
+
+        public TimerService(int workingTime, int breakTime, UserSettings userSettings, HistoryService historyService, string userSettingFile, string historyFile)
+        {
+            this.workingTime = workingTime;
+            this.breakTime = breakTime;
+            this._userSettings = userSettings;
+            this._historyService = historyService;
+            this.userSettingsFile = userSettingFile;
+            this.historyFile = historyFile;
+        }
+
 
     }
 }
+
+
+/*
+ 
+
+
+    creation of dispatcher timer
+    set tick interval
+    when tick even fires call the method that udpates the ui and remaining seconds
+    
+    
+
+    work_seconds =  load from settings   
+    break_seconds = load from settings
+    
+    creation of dispatcher timer
+    timer tick interval setup
+    
+          
+    
+1.  timer start
+        
+2.  timer stop
+    
+3.  switch session
+    
+4.  call UI update
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ */

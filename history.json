@@ -82,5 +82,12 @@
     "SessionType": "Work",
     "DurationSeconds": 20,
     "Completed": true
+  },
+  {
+    "StartTime": "2026-06-18T06:21:04.3743587+05:45",
+    "EndTime": "2026-06-18T06:41:04.3743902+05:45",
+    "SessionType": "Work",
+    "DurationSeconds": 20,
+    "Completed": true
   }
 ]

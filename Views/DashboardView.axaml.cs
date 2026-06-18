@@ -6,7 +6,6 @@ using ScreenBreak.Services;
 using ScreenBreak.Models;
 using System;
 using Avalonia.Threading;
-using System.Media;
 using System.Collections.Generic;
 
 
