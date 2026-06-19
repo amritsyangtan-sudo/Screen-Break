@@ -11,15 +11,12 @@ namespace ScreenBreak.Services
     {
         private UserSettings _userSettings;
         private HistoryService _historyService;
-        private DispatcherTimer _timer = new();
+        private DispatcherTimer _dispatcherTimer = new();
         private int _remainingTime;
         private int workingTime;
         private int breakTime;
         private string userSettingsFile;
         private string historyFile;
-
-
-
 
         public TimerService(int workingTime, int breakTime, UserSettings userSettings, HistoryService historyService, string userSettingFile, string historyFile)
         {
@@ -31,6 +28,30 @@ namespace ScreenBreak.Services
             this.historyFile = historyFile;
         }
 
+        public void StartTimer(int tickTimer)
+        {
+            _dispatcherTimer.Interval = TimeSpan.FromSeconds(tickTimer);
+            _dispatcherTimer.Tick += TimerTick;
+
+        }
+
+        public void TimerTick(object ? sender, EventArgs e)
+        {
+            if(_remainingTime > 0)
+            {
+                _remainingTime--;
+            }
+            else
+            {
+
+            }
+        }
+
+
+
+
+
+        
 
     }
 }
@@ -63,23 +84,7 @@ namespace ScreenBreak.Services
 4.  call UI update
     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+button click
+    start continuous till stop
  
  */
