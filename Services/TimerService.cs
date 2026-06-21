@@ -40,6 +40,7 @@ namespace ScreenBreak.Services
             if(_remainingTime > 0)
             {
                 _remainingTime--;
+                UpdateDisplay();
             }
             else
             {
@@ -48,7 +49,10 @@ namespace ScreenBreak.Services
         }
 
 
+        public void UpdateDisplay()
+        {
 
+        }
 
 
         
