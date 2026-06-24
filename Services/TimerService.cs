@@ -32,7 +32,6 @@ namespace ScreenBreak.Services
         {
             _dispatcherTimer.Interval = TimeSpan.FromSeconds(tickTimer);
             _dispatcherTimer.Tick += TimerTick;
-
         }
 
         public void TimerTick(object ? sender, EventArgs e)
@@ -54,7 +53,10 @@ namespace ScreenBreak.Services
 
         }
 
+        public void SaveSessionRecord()
+        {
 
+        }
         
 
     }
